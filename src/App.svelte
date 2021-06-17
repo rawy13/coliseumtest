@@ -43,19 +43,23 @@
   main {
     display: flex;
     justify-content: center;
-    // align-items: center;
     height: 100vh;
     background-color: #3a4151;
     .logo {
       position: absolute;
       top: 42px;
-      left: 76px;
+      left: clamp(50px, 3.95vw, 80px);
+      width: clamp(60px, 4.16vw, 90px);
     }
     .wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-top: 244px;
+
+      img {
+        width: clamp(316px, 27.65vw, 600px);
+      }
 
       &-login {
         display: flex;
@@ -111,13 +115,27 @@
         display: flex;
         justify-content: space-between;
         margin-top: 40px;
-        width: 412px;
+        width: clamp(330px, 21.45vw, 500px); // 412px
 
         a {
           font-size: 15px;
           font-weight: 300;
-          color: red;
+          color: white;
           text-decoration: none;
+
+          &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 31px;
+            margin: 5px auto 0;
+            background: linear-gradient(
+              90deg,
+              rgba(23, 186, 248, 0.3) 3.33%,
+              #3593ef 57.15%,
+              rgba(80, 112, 231, 0.4) 106.67%
+            );
+          }
         }
       }
     }
