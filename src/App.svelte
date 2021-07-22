@@ -123,7 +123,7 @@
           color: white;
           text-decoration: none;
 
-          &::after {
+          &:hover::after {
             content: "";
             display: block;
             height: 1px;
